@@ -21,6 +21,10 @@ class Background(object):
         pass
 
 
+    # def fix_continuum():
+
+    #     for _, parameter in self._continuum.
+
 
     @property
     def lines(self):

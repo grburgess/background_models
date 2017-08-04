@@ -1,5 +1,5 @@
 from generic_background_model import Background
-
+from astromodels import Broken_powerlaw, StepFunction, Gaussian
 
 class XRTBackground(Background):
     
@@ -58,8 +58,7 @@ class XRTBackground(Background):
     def _setup(self,level):
         
         
-        c=Constant(k=1)
-        c.k.fix=True
+
         
         for i in xrange(min([level,3])):
             
@@ -67,7 +66,7 @@ class XRTBackground(Background):
             
         if level > 4:
             
-            self._background *= (c-self._extra_funcs[0])
+            self._background *= (1. - self._extra_funcs[0])
         
         if level > 5:
             
